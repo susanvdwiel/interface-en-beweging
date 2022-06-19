@@ -1,0 +1,3029 @@
+html {
+    height: 100%;
+    background-color: #BCE1E4;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+input {
+    position: absolute;
+    z-index: 9999;
+    opacity: 0;
+}
+
+section {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+}
+
+a {
+    display: block;
+
+    width: 125px;
+    height: 125px;
+
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+    /*    place-items: center;*/
+
+    background-color: #3E9A9E;
+    border-radius: 50%;
+    box-shadow: 4px 4px 4px rgb(102, 102, 0, 0.2);
+    border: 1px solid black;
+    
+    z-index: 999;
+}
+
+a > .helm {
+    transform: translate(-8.5%, -8.5%) scale(.32);
+    animation: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+a > .zonnebril {
+    transform: scale(.5);
+    animation: none;
+    position: relative;
+    top: -65px;
+    left: calc(50% - 75px);
+    z-index: 999;
+
+    animation-name: heartbeat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(0.55);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+a > .joint {
+    transform: scale(.6) rotate(30deg);
+    animation: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.wolkbutton {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #BABAAE;
+    top: 490px;
+    transform: scale(0);
+    opacity: 1;
+    left: calc(50% - 35px);
+
+    animation-name: wolkjebutton;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes wolkjebutton {
+    0% {}
+
+    29% {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(.2);
+        opacity: 0.8;
+    }
+
+    80% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.wolkjebutton.cirkel1 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: -14px;
+    left: calc(50% - 8px);
+}
+
+.wolkjebutton.cirkel2 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: -8px;
+    left: calc(50% + 1px);
+}
+
+.wolkjebutton.cirkel3 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: 2px;
+    left: calc(50% - 1px);
+}
+
+.wolkjebutton.cirkel4 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: 2px;
+    left: calc(50% - 15px);
+}
+
+.wolkjebutton.cirkel5 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: -8px;
+    left: calc(50% - 18px);
+}
+
+
+.lama-outer {
+    height: 100vh;
+    z-index: -100;
+
+    animation-name: armlinks;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}
+
+@keyframes armlinks {
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-2%);
+    }
+}
+
+
+
+
+
+.lama {
+    position: absolute;
+    width: 250px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 125px);
+}
+
+.hoofd {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border-bottom: 100px solid #DFCDBD;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    left: calc(50% - 50px);
+    top: 0px;
+    border-radius: 35%;
+    z-index: 1;
+}
+
+.voorhoofd {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    background-color: #DFCDBD;
+}
+
+.oog {
+    position: absolute;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 10px;
+
+    display: grid;
+    place-items: center;
+}
+
+.oog.links {
+    right: 70%;
+    animation: knipper-links 4.47s infinite linear;
+}
+
+.oog.rechts {
+    left: 70%;
+    animation: knipper-rechts 4.47s infinite linear;
+}
+
+@keyframes knipper-links {
+
+    0%,
+    47% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg) scaleY(0);
+    }
+
+    53%,
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes knipper-rechts {
+
+    0%,
+    47% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(10deg) scaleY(0);
+    }
+
+    53%,
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+.pupil {
+    position: absolute;
+    background: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.ooglid {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: linear-gradient(#CEBFB2 45%, transparent 45%);
+}
+
+.haar.cirkel1 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -20px;
+    left: calc(50% - 75px);
+}
+
+.haar.cirkel2 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -15px;
+    left: calc(50% - 35px);
+}
+
+.haar.cirkel3 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -15px;
+    right: calc(50% - 45px);
+}
+
+.haar.cirkel4 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -25px;
+    right: calc(50% - 80px);
+}
+
+.haar.cirkel5 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -45px;
+    right: calc(50% - 50px);
+}
+
+.haar.cirkel6 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -50px;
+    right: calc(50% - 19px);
+}
+
+.haar.cirkel7 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -43px;
+    left: calc(50% - 55px);
+}
+
+.neus.bovenkant {
+    position: absolute;
+    top: 55px;
+    width: 40px;
+    height: 25px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #F2E5DB;
+    border-bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.neus.rechts {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 70px;
+    left: calc(50% - 0px);
+    z-index: 10;
+}
+
+.neus.links {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 70px;
+    right: calc(50% - 0px);
+    z-index: 10;
+}
+
+.mond {
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    border-radius: 50%;
+    background: black;
+    top: 80px;
+    right: calc(50% - 10px);
+    z-index: 3;
+}
+
+.tong {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #CC796B;
+    border-bottom: 0;
+    top: 3px;
+    right: calc(50% - 10px);
+    transform: rotate(-180deg);
+    z-index: 2;
+
+    animation-name: tongetje;
+    animation-duration: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes tongetje {
+    0% {}
+
+    100% {
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
+
+.neus.onderkant {
+    position: absolute;
+    top: 90px;
+    width: 30px;
+    height: 20px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #CEBFB2;
+    border-bottom: 0;
+    transform: rotate(-180deg);
+    left: calc(50% - 15px);
+    z-index: 1;
+}
+
+.neus.hartje {
+    position: relative;
+    left: calc(50% - 10px);
+    z-index: 10;
+}
+
+.neus.hartje:before,
+.neus.hartje:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 18px;
+    left: 10px;
+    top: 65px;
+    background: #463C33;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.neus.hartje:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.oor.links {
+    position: absolute;
+    width: 10px;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 80px solid #F2E5DB;
+    transform: rotate(-50deg);
+    right: calc(50% + 35px);
+    top: -65px;
+}
+
+.oor.rechts {
+    position: absolute;
+    width: 10px;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 80px solid #F2E5DB;
+    transform: rotate(-310deg);
+    left: calc(50% + 35px);
+    top: -65px;
+}
+
+.binnenkant.links {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: -30px;
+    background: #DFCDBD;
+    border-radius: 100px / 50px;
+    right: calc(50% + 45px);
+    transform: rotate(40deg);
+}
+
+.binnenkant.rechts {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: -30px;
+    background: #DFCDBD;
+    border-radius: 100px / 50px;
+    left: calc(50% + 50px);
+    transform: rotate(130deg);
+}
+
+.lichaam {
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    height: 200px;
+    background-color: #F2E5DB;
+    left: calc(50% - 25px);
+    z-index: 0;
+}
+
+.lichaam > .neklinks > .nek.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 15px;
+    right: calc(50% + 33px);
+}
+
+.lichaam > .neklinks > .nek.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 35px;
+    right: calc(50% + 40px);
+}
+
+.lichaam > .neklinks > .nek.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 55px;
+    right: calc(50% + 41px);
+}
+
+.lichaam > .neklinks > .nek.cirkel4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 75px;
+    right: calc(50% + 43px);
+}
+
+.lichaam > .neklinks > .nek.cirkel5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 95px;
+    right: calc(50% + 40px);
+}
+
+.lichaam > .neklinks > .nek.cirkel6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 115px;
+    right: calc(50% + 42px);
+}
+
+.lichaam > .neklinks > .nek.cirkel7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 135px;
+    right: calc(50% + 39px);
+}
+
+.lichaam > .neklinks > .nek.cirkel8 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 155px;
+    right: calc(50% + 41px);
+}
+
+.lichaam > .neklinks > .nek.cirkel9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 175px;
+    right: calc(50% + 43px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 10px;
+    left: calc(50% + 29px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 30px;
+    left: calc(50% + 36px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 50px;
+    left: calc(50% + 32px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 70px;
+    left: calc(50% + 33px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 90px;
+    left: calc(50% + 35px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 110px;
+    left: calc(50% + 31px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 130px;
+    left: calc(50% + 35px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel8 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 150px;
+    left: calc(50% + 32px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 170px;
+    left: calc(50% + 35px);
+}
+
+.lichaam > .nekrechts > .nek.cirkel10 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 190px;
+    left: calc(50% + 32px);
+}
+
+.buik {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 270px;
+    left: calc(50% - 75px);
+}
+
+.buik > .belly.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 7px;
+    left: calc(50% - 75px);
+}
+
+.buik > .belly.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 25px;
+    left: calc(50% - 85px);
+}
+
+.buik > .belly.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 40px;
+    left: calc(50% - 99px);
+}
+
+.buik > .belly.cirkel4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 59px;
+    left: calc(50% - 103px);
+}
+
+.buik > .belly.cirkel5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 76px;
+    left: calc(50% - 111px);
+}
+
+.buik > .belly.cirkel6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 93px;
+    left: calc(50% - 110px);
+}
+
+.buik > .belly.cirkel7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 93px;
+    left: calc(50% - 112px);
+}
+
+.buik > .belly.cirkel8 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 113px;
+    left: calc(50% - 108px);
+}
+
+.buik > .belly.cirkel9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 130px;
+    left: calc(50% - 100px);
+}
+
+.buik > .belly.cirkel10 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 150px;
+    left: calc(50% - 92px);
+}
+
+.buik > .belly.cirkel11 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 165px;
+    left: calc(50% - 78px);
+}
+
+.buik > .belly.cirkel12 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 170px;
+    left: calc(50% - 59px);
+}
+
+.buik > .belly.cirkel13 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 180px;
+    left: calc(50% - 40px);
+}
+
+.buik > .belly.cirkel14 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 180px;
+    left: calc(50% - 20px);
+}
+
+.buik > .belly.cirkel15 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 182px;
+    left: calc(50% - 0px);
+}
+
+.buik > .belly.cirkel16 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 175px;
+    right: calc(50% - 45px);
+}
+
+.buik > .belly.cirkel17 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 170px;
+    right: calc(50% - 65px);
+}
+
+.buik > .belly.cirkel18 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 160px;
+    right: calc(50% - 85px);
+}
+
+.buik > .belly.cirkel19 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 143px;
+    right: calc(50% - 91px);
+}
+
+.buik > .belly.cirkel20 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 125px;
+    right: calc(50% - 103px);
+}
+
+.buik > .belly.cirkel21 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 105px;
+    right: calc(50% - 105px);
+}
+
+.buik > .belly.cirkel22 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 85px;
+    right: calc(50% - 109px);
+}
+
+.buik > .belly.cirkel23 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 65px;
+    right: calc(50% - 104px);
+}
+
+.buik > .belly.cirkel24 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 45px;
+    right: calc(50% - 95px);
+}
+
+.buik > .belly.cirkel25 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 26px;
+    right: calc(50% - 87px);
+}
+
+.buik > .belly.cirkel26 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 16px;
+    right: calc(50% - 70px);
+}
+
+.arm.links > .schouderlinks > .schouderlinks1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 230px;
+    right: calc(50% + 25px);
+    z-index: -1;
+}
+
+.arm.links > .schouderlinks > .schouderlinks2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 250px;
+    right: calc(50% + 31px);
+    z-index: -1;
+}
+
+.arm.links > .schouderlinks > .schouderlinks3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 270px;
+    right: calc(50% + 24px);
+    z-index: -1;
+}
+
+.arm.links > .onderarm {
+    position: absolute;
+    width: 22px;
+    height: 130px;
+    background: #CEBFB2;
+    transform: rotate(75deg);
+    border-radius: 20px;
+    right: calc(50% + 95px);
+    top: 200px;
+    z-index: -2;
+}
+
+
+
+
+
+@keyframes blink {
+    0% {}
+
+    60% {
+        background-color: goldenrod
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.arm.links > .hand {
+    position: absolute;
+    border-bottom: 20px solid #463C33;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 10px;
+    width: 22px;
+    transform: rotate(+75deg);
+    top: 265px;
+    right: calc(50% + 150px);
+    z-index: -1;
+}
+
+.arm.rechts > .schouderrechts > .schouderrechts1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 230px;
+    left: calc(50% + 70px);
+    z-index: -1;
+}
+
+.arm.rechts > .schouderrechts > .schouderrechts2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 250px;
+    left: calc(50% + 74px);
+    z-index: -1;
+}
+
+.arm.rechts > .schouderrechts > .schouderrechts3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 270px;
+    left: calc(50% + 70px);
+    z-index: -1;
+}
+
+.arm.rechts > .onderarm {
+    position: absolute;
+    width: 22px;
+    height: 130px;
+    background: #CEBFB2;
+    transform: rotate(-75deg);
+    border-radius: 20px;
+    left: calc(50% + 130px);
+    top: 205px;
+    z-index: -2;
+}
+
+.arm.rechts > .hand {
+    position: absolute;
+    border-bottom: 20px solid #463C33;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 10px;
+    width: 22px;
+    transform: rotate(-65deg);
+    top: 270px;
+    left: calc(50% + 180px);
+    z-index: -1;
+}
+
+.scooter {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -30%);
+    height: 400px;
+}
+
+.scooter > .stuurlinks {
+    position: absolute;
+    width: 40px;
+    height: 150px;
+    background-color: #EE6F47;
+    transform: rotate(-80deg);
+    top: 350px;
+    right: calc(50% + 60px);
+}
+
+.scooter > .handvatlinks {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background-color: #F3AC95;
+    transform: rotate(-80deg);
+    top: 380px;
+    right: calc(50% + 160px);
+    z-index: -1;
+}
+
+.scooter > .stuurrechts {
+    position: absolute;
+    width: 40px;
+    height: 150px;
+    background-color: #EE6F47;
+    transform: rotate(-100deg);
+    top: 350px;
+    left: calc(50% + 100px);
+}
+
+.scooter > .handvatrechts {
+    position: absolute;
+    width: 20px;
+    height: 60px;
+    background-color: #F3AC95;
+    transform: rotate(-100deg);
+    top: 380px;
+    left: calc(50% + 200px);
+    z-index: -1;
+}
+
+.scooter > .bovenkant {
+    position: absolute;
+    top: 390px;
+    width: 100px;
+    height: 45px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #EE6F47;
+    border-bottom: 0;
+    right: calc(50% - 70px);
+    z-index: 1;
+}
+
+.scooter > .lamp {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #E2BF2B;
+    top: 420px;
+    right: calc(50% - 55px);
+    z-index: 1;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.scooter > .onderkant {
+    position: absolute;
+    border-bottom: 215px solid #EE6F47;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    width: 100px;
+    top: 450px;
+    right: calc(50% - 104px);
+    z-index: 0;
+}
+
+.scooter > .wiel {
+    position: absolute;
+    width: 100px;
+    border-bottom: 90px solid #232C56;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    left: calc(50% - 55px);
+    top: 605px;
+    border-radius: 35%;
+    z-index: 1;
+    transform: rotate(-90deg);
+}
+
+.helm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-33%, -360%);
+    width: 150px;
+    height: 90px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #EE6F47;
+    border-bottom: 0;
+    /*    right: calc(50% - 100px);*/
+    z-index: 1;
+    animation-name: helmanim;
+    animation-duration: 2s;
+    /*    animation-delay: .75s;*/
+    /*    animation-direction: alternate;*/
+    animation-iteration-count: infinite;
+}
+
+@keyframes helmanim {
+    0% {
+        transform: translate(-33%, -360%);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: translate(-33%, -350%);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: translate(-33%, -360%);
+    }
+}
+
+.helm > .ooglinks {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #232C56;
+    top: 18px;
+    right: calc(50% - 5px);
+    z-index: 2;
+}
+
+.helm > .oogrechts {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background-color: #232C56;
+    top: 18px;
+    left: calc(50% - 5px);
+    z-index: 2;
+}
+
+.helm > .ooglinks > .olinks {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: pink;
+    top: 10px;
+    right: calc(50% - 22px);
+    z-index: 2;
+}
+
+.helm > .oogrechts > .orechts {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: pink;
+    top: 10px;
+    right: calc(50% - 22px);
+    z-index: 2;
+}
+
+
+
+
+.brillinks {
+    position: absolute;
+    border-bottom: 15px solid #232C56;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    width: 20px;
+    top: 45px;
+    right: calc(50% + 45px);
+    z-index: 0;
+    transform: rotate(-90deg);
+}
+
+.brilrechts {
+    position: absolute;
+    border-bottom: 15px solid #232C56;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    width: 20px;
+    top: 45px;
+    left: calc(50% + 45px);
+    z-index: 0;
+    transform: rotate(-270deg);
+}
+
+.touwlinks {
+    position: absolute;
+    width: 20px;
+    height: 130px;
+    border-radius: 45%;
+    top: 70px;
+    background-color: #EE6F47;
+    transform-origin: 10px 10px;
+
+    animation-name: wapper-links;
+    animation-duration: 2s;
+    /*    animation-delay: -.5s;*/
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    /*    animation-timing-function: ;*/
+}
+
+@keyframes wapper-links {
+    0% {
+        transform: rotate(50deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    50% {
+        transform: rotate(20deg);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        ;
+    }
+
+    100% {
+        transform: rotate(50deg);
+    }
+}
+
+.touwrechts {
+    position: absolute;
+    width: 20px;
+    height: 130px;
+    border-radius: 45%;
+    top: 70px;
+    background-color: #EE6F47;
+    left: calc(50% + 55px);
+    transform-origin: 10px 10px;
+
+    animation-name: wapper-rechts;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    /*    animation-timing-function: ease-in;*/
+    /*    animation-delay: -.5s;*/
+}
+
+@keyframes wapper-rechts {
+    0% {
+        transform: rotate(-50deg);
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    50% {
+        transform: rotate(-20deg);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+        ;
+    }
+
+    100% {
+        transform: rotate(-50deg);
+    }
+}
+
+
+
+
+
+.zonnebril > .tussenstuk {
+    position: absolute;
+    top: 150px;
+    width: 40px;
+    height: 10px;
+    background-color: rgb(238, 111, 71);
+    right: calc(50% - 45px);
+    z-index: 1;
+}
+
+.zonnebril {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -180%);
+    height: 200px;
+    z-index: 5;
+}
+
+.hartjelinks {
+    position: relative;
+    left: calc(50% - 60px);
+    z-index: 10;
+}
+
+.hartjelinks:before,
+.hartjelinks:after {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 60px;
+    left: 35px;
+    top: 130px;
+    background: rgb(238, 111, 71, 0.8);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.hartjelinks:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.hartjerechts {
+    position: relative;
+    left: calc(50% + 40px);
+    z-index: 10;
+}
+
+.hartjerechts:before,
+.hartjerechts:after {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 60px;
+    left: 35px;
+    top: 130px;
+    background: rgb(238, 111, 71, 0.8);
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.hartjerechts:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+
+
+
+
+
+
+
+.joint {
+    position: absolute;
+    border-bottom: 120px solid #EFECE2;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    width: 10px;
+    top: -30px;
+    border-radius: 20%;
+    left: calc(50% - 15px);
+    transform: rotate(115deg)
+}
+
+.joint > .bovenkant {
+    position: absolute;
+    border-bottom: 10px solid #DB6D36;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    transform: rotate(180deg);
+    width: 10px;
+    top: 115px;
+    border-radius: 20%;
+    left: calc(50% - 13px);
+    z-index: 1;
+}
+
+.joint > .tipje {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #2A2A2A;
+    z-index: 1;
+}
+
+.slinger {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #BE7B63;
+    border-radius: 50%;
+    top: 132px;
+    left: calc(50% + 65px);
+    z-index: 4;
+}
+
+.slinger > .ketting.cirkel1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #A2A295;
+    border-radius: 50%;
+    top: 12px;
+    left: calc(50% - 23px);
+    z-index: 6;
+}
+
+.slinger > .ketting.cirkel2 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #63674B;
+    border-radius: 50%;
+    top: 20px;
+    left: calc(50% - 40px);
+    z-index: 6;
+}
+
+.slinger > .ketting.cirkel3 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #BE7B63;
+    border-radius: 50%;
+    top: 33px;
+    left: calc(50% - 53px);
+    z-index: 6;
+}
+
+.slinger > .ketting.cirkel4 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #A2A295;
+    border-radius: 50%;
+    top: 40px;
+    left: calc(50% - 70px);
+    z-index: 6;
+}
+
+.slinger > .ketting.cirkel5 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #63674B;
+    border-radius: 50%;
+    top: 48px;
+    left: calc(50% - 84px);
+    z-index: 6;
+}
+
+.slinger > .ketting.cirkel6 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #BE7B63;
+    border-radius: 50%;
+    top: 55px;
+    left: calc(50% - 101px);
+    z-index: 6;
+}
+
+.slinger > .ketting.cirkel7 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #A2A295;
+    border-radius: 50%;
+    top: 65px;
+    left: calc(50% - 115px);
+    z-index: 6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+    height: 100%;
+    background-color: #BCE1E4;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+#loader > .lama {
+    position: absolute;
+    width: 250px;
+    height: 500px;
+    top: calc(50% - 250px);
+    left: calc(50% - 125px);
+    z-index: -3;
+}
+
+#loader > .lama > .hoofd {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    border-bottom: 100px solid #DFCDBD;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    left: calc(50% - 50px);
+    top: 0px;
+    border-radius: 35%;
+    z-index: 1;
+}
+
+#loader > .lama > .hoofd > .voorhoofd {
+    position: absolute;
+    width: 100px;
+    height: 35px;
+    background-color: #DFCDBD;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oog {
+    position: absolute;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    top: 10px;
+
+    display: grid;
+    place-items: center;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oog.links {
+    right: 70%;
+    animation: knipper-links 4.47s infinite linear;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oog.rechts {
+    left: 70%;
+    animation: knipper-rechts 4.47s infinite linear;
+}
+
+@keyframes knipper-links {
+
+    0%,
+    47% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(-10deg) scaleY(0);
+    }
+
+    53%,
+    100% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes knipper-rechts {
+
+    0%,
+    47% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(10deg) scaleY(0);
+    }
+
+    53%,
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oog > .pupil {
+    position: absolute;
+    background: black;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oog > .ooglid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-image: linear-gradient(#CEBFB2 45%, transparent 45%);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel1 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -20px;
+    left: calc(50% - 75px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel2 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -15px;
+    left: calc(50% - 35px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel3 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -15px;
+    right: calc(50% - 45px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel4 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -25px;
+    right: calc(50% - 80px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel5 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -45px;
+    right: calc(50% - 50px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel6 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -50px;
+    right: calc(50% - 19px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .haar.cirkel7 {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: #463C33;
+    border-radius: 50%;
+    top: -43px;
+    left: calc(50% - 55px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.bovenkant {
+    position: absolute;
+    top: 55px;
+    width: 40px;
+    height: 25px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #F2E5DB;
+    border-bottom: 0;
+    left: calc(50% - 20px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.rechts {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 70px;
+    left: calc(50% - 0px);
+    z-index: 10;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.links {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 70px;
+    right: calc(50% - 0px);
+    z-index: 10;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .mond {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background: black;
+    top: 78px;
+    right: calc(50% - 15px);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .tong {
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #EE6F47;
+    border-bottom: 0;
+    top: 4px;
+    right: calc(50% - 10px);
+    transform: rotate(-180deg);
+    z-index: 2;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.hartje {
+    position: relative;
+    left: calc(50% - 10px);
+    z-index: 10;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.hartje:before,
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.hartje:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 18px;
+    left: 10px;
+    top: 65px;
+    background: #463C33;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.hartje:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .neus.onderkant {
+    position: absolute;
+    top: 95px;
+    width: 30px;
+    height: 20px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    background-color: #CEBFB2;
+    border-bottom: 0;
+    transform: rotate(-180deg);
+    left: calc(50% - 15px);
+    z-index: 1;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oor.links {
+    position: absolute;
+    width: 10px;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 80px solid #F2E5DB;
+    transform: rotate(-50deg);
+    right: calc(50% + 35px);
+    top: -65px;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .oor.rechts {
+    position: absolute;
+    width: 10px;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-top: 80px solid #F2E5DB;
+    transform: rotate(-310deg);
+    left: calc(50% + 35px);
+    top: -65px;
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .binnenkant.links {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: -30px;
+    background: #DFCDBD;
+    border-radius: 100px / 50px;
+    right: calc(50% + 45px);
+    transform: rotate(40deg);
+}
+
+#loader > .lama > .hoofd > .voorhoofd > .gezicht > .binnenkant.rechts {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    top: -30px;
+    background: #DFCDBD;
+    border-radius: 100px / 50px;
+    left: calc(50% + 50px);
+    transform: rotate(130deg);
+}
+
+#loader > .lama > .lichaam {
+    position: absolute;
+    top: 100px;
+    width: 100px;
+    height: 200px;
+    background-color: #F2E5DB;
+    left: calc(50% - 25px);
+    z-index: 0;
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 15px;
+    right: calc(50% + 33px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 35px;
+    right: calc(50% + 40px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 55px;
+    right: calc(50% + 41px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 75px;
+    right: calc(50% + 43px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 95px;
+    right: calc(50% + 40px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 115px;
+    right: calc(50% + 42px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 135px;
+    right: calc(50% + 39px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel8 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 155px;
+    right: calc(50% + 41px);
+}
+
+#loader > .lama > .lichaam > .neklinks > .nek.cirkel9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 175px;
+    right: calc(50% + 43px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 10px;
+    left: calc(50% + 29px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 30px;
+    left: calc(50% + 36px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 50px;
+    left: calc(50% + 32px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 70px;
+    left: calc(50% + 33px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 90px;
+    left: calc(50% + 35px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 110px;
+    left: calc(50% + 31px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 130px;
+    left: calc(50% + 35px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel8 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 150px;
+    left: calc(50% + 32px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 170px;
+    left: calc(50% + 35px);
+}
+
+#loader > .lama > .lichaam > .nekrechts > .nek.cirkel10 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 190px;
+    left: calc(50% + 32px);
+}
+
+#loader > .lama > .buik {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 270px;
+    left: calc(50% - 75px);
+}
+
+#loader > .lama > .buik > .belly.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 7px;
+    left: calc(50% - 75px);
+}
+
+#loader > .lama > .buik > .belly.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 25px;
+    left: calc(50% - 85px);
+}
+
+#loader > .lama > .buik > .belly.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 40px;
+    left: calc(50% - 99px);
+}
+
+#loader > .lama > .buik > .belly.cirkel4 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 59px;
+    left: calc(50% - 103px);
+}
+
+#loader > .lama > .buik > .belly.cirkel5 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 76px;
+    left: calc(50% - 111px);
+}
+
+#loader > .lama > .buik > .belly.cirkel6 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 93px;
+    left: calc(50% - 110px);
+}
+
+#loader > .lama > .buik > .belly.cirkel7 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 93px;
+    left: calc(50% - 112px);
+}
+
+#loader > .lama > .buik > .belly.cirkel8 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 113px;
+    left: calc(50% - 108px);
+}
+
+#loader > .lama > .buik > .belly.cirkel9 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 130px;
+    left: calc(50% - 100px);
+}
+
+#loader > .lama > .buik > .belly.cirkel10 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 150px;
+    left: calc(50% - 92px);
+}
+
+#loader > .lama > .buik > .belly.cirkel11 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 165px;
+    left: calc(50% - 78px);
+}
+
+#loader > .lama > .buik > .belly.cirkel12 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 170px;
+    left: calc(50% - 59px);
+}
+
+#loader > .lama > .buik > .belly.cirkel13 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 180px;
+    left: calc(50% - 40px);
+}
+
+#loader > .lama > .buik > .belly.cirkel14 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 180px;
+    left: calc(50% - 20px);
+}
+
+#loader > .lama > .buik > .belly.cirkel15 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 182px;
+    left: calc(50% - 0px);
+}
+
+#loader > .lama > .buik > .belly.cirkel16 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 175px;
+    right: calc(50% - 45px);
+}
+
+#loader > .lama > .buik > .belly.cirkel17 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 170px;
+    right: calc(50% - 65px);
+}
+
+#loader > .lama > .buik > .belly.cirkel18 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 160px;
+    right: calc(50% - 85px);
+}
+
+#loader > .lama > .buik > .belly.cirkel19 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 143px;
+    right: calc(50% - 91px);
+}
+
+#loader > .lama > .buik > .belly.cirkel20 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 125px;
+    right: calc(50% - 103px);
+}
+
+#loader > .lama > .buik > .belly.cirkel21 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 105px;
+    right: calc(50% - 105px);
+}
+
+#loader > .lama > .buik > .belly.cirkel22 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 85px;
+    right: calc(50% - 109px);
+}
+
+#loader > .lama > .buik > .belly.cirkel23 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 65px;
+    right: calc(50% - 104px);
+}
+
+#loader > .lama > .buik > .belly.cirkel24 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 45px;
+    right: calc(50% - 95px);
+}
+
+#loader > .lama > .buik > .belly.cirkel25 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 26px;
+    right: calc(50% - 87px);
+}
+
+#loader > .lama > .buik > .belly.cirkel26 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #F2E5DB;
+    border-radius: 50%;
+    top: 16px;
+    right: calc(50% - 70px);
+}
+
+#loader > .lama > .arm.links > .schouderlinks > .schouderlinks1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 230px;
+    right: calc(50% + 25px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.links > .schouderlinks > .schouderlinks2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 250px;
+    right: calc(50% + 31px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.links > .schouderlinks > .schouderlinks3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 270px;
+    right: calc(50% + 24px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.links > .onderarm {
+    position: absolute;
+    width: 22px;
+    height: 120px;
+    background: #CEBFB2;
+    transform: rotate(30deg);
+    border-radius: 20px;
+    right: calc(50% + 60px);
+    top: 240px;
+    z-index: -2;
+}
+
+#loader > .lama > .arm.links > .hand {
+    position: absolute;
+    border-bottom: 20px solid #463C33;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 10px;
+    width: 22px;
+    transform: rotate(30deg);
+    top: 330px;
+    right: calc(50% + 82px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.rechts > .schouderrechts > .schouderrechts1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 230px;
+    left: calc(50% + 70px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.rechts > .schouderrechts > .schouderrechts2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 250px;
+    left: calc(50% + 74px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.rechts > .schouderrechts > .schouderrechts3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 270px;
+    left: calc(50% + 70px);
+    z-index: -1;
+}
+
+#loader > .lama > .arm.rechts > .onderarm {
+    position: absolute;
+    width: 22px;
+    height: 120px;
+    background: #CEBFB2;
+    transform: rotate(145deg);
+    border-radius: 20px;
+    left: calc(50% + 105px);
+    top: 240px;
+    z-index: -2;
+}
+
+#loader > .lama > .arm.rechts > .hand {
+    position: absolute;
+    border-bottom: 20px solid #463C33;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 10px;
+    width: 22px;
+    transform: rotate(-30deg);
+    top: 330px;
+    left: calc(50% + 131px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.links,
+.been.rechts {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(100%, -85%);
+}
+
+#loader > .lama > .been.links {
+    position: absolute;
+    width: 22px;
+    height: 130px;
+    background-color: #CEBFB2;
+    top: 570px;
+    left: calc(50% - 35px);
+    z-index: -2;
+}
+
+#loader > .lama > .been.links > .leg.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 1px;
+    right: calc(50% + 5px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.links > .leg.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 7px;
+    right: calc(50% - 10px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.links > .leg.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 2px;
+    right: calc(50% - 25px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.rechts {
+    position: absolute;
+    width: 22px;
+    height: 130px;
+    background-color: #CEBFB2;
+    top: 570px;
+    left: calc(50% + 35px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.rechts > .leg.cirkel1 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 0px;
+    right: calc(50% + 5px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.rechts > .leg.cirkel2 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: 4px;
+    right: calc(50% - 12px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.rechts > .leg.cirkel3 {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #DFCDBD;
+    border-radius: 50%;
+    top: -3px;
+    right: calc(50% - 25px);
+    z-index: -1;
+}
+
+#loader > .lama > .been.links > .voet {
+    position: absolute;
+    border-bottom: 20px solid #463C33;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 10px;
+    width: 22px;
+    top: 110px;
+    right: calc(50% - 16px);
+    z-index: 1;
+}
+
+#loader > .lama > .been.rechts > .voet {
+    position: absolute;
+    border-bottom: 20px solid #463C33;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    height: 10px;
+    width: 22px;
+    top: 110px;
+    left: calc(50% - 16px);
+}
+
+#loader > .spuug {
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    background-color: #9BAA55;
+    top: 230px;
+    left: calc(50% - 3px);
+    /*    transform: rotate(10deg);*/
+    z-index: 1;
+
+    animation-name: spugen;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+
+}
+
+@keyframes spugen {
+    0% {
+        transform: scale(.32) rotate(10deg);
+    }
+
+    100% {
+        transform: scale(22) rotate(200deg);
+        z-index: -1;
+    }
+}
+
+
+#loader > .spuug > .spugen.cirkel1 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: -20px;
+    left: calc(50% + 4px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel3 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: -3px;
+    left: calc(50% + 22px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel4 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: 18px;
+    left: calc(50% + 12px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel5 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: 26px;
+    left: calc(50% - 10px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel6 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: 24px;
+    left: calc(50% - 35px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel7 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: 10px;
+    left: calc(50% - 55px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel8 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: -11px;
+    left: calc(50% - 45px);
+    z-index: 1;
+}
+
+#loader > .spuug > .spugen.cirkel9 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #9BAA55;
+    top: -19px;
+    left: calc(50% - 20px);
+    z-index: 1;
+}
+
+#loader {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #BCE1E4;
+    top: 0;
+    z-index: 10;
+    
+    animation-name: verdwijnen;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
+}
+
+@keyframes verdwijnen {
+    0% {}
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+#loader > a {
+    display: block;
+
+    width: 125px;
+    height: 125px;
+
+    display: grid;
+
+    justify-items: center;
+    align-items: center;
+    /*    place-items: center;*/
+
+    background-color: #3E9A9E;
+    border-radius: 50%;
+    box-shadow: 4px 4px 4px rgb(102, 102, 0, 0.2);
+    border: 1px solid black;
+    
+    z-index: 999;
+}
+
+#loader > a > .helm {
+    transform: translate(-8.5%, -8.5%) scale(.32);
+    animation: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+#loader > a > .zonnebril {
+    transform: scale(.5);
+    animation: none;
+    position: relative;
+    top: -65px;
+    left: calc(50% - 75px);
+    z-index: 999;
+
+    animation-name: heartbeat;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(0.55);
+    }
+
+    100% {
+        transform: scale(0.5);
+    }
+}
+
+#loader > a > .joint {
+    transform: scale(.6) rotate(30deg);
+    animation: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+#loader > .wolkbutton {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #BABAAE;
+    top: 490px;
+    transform: scale(0);
+    opacity: 1;
+    left: calc(50% - 35px);
+    z-index: 999;
+
+    animation-name: wolkjebutton;
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+
+@keyframes wolkjebutton {
+    0% {}
+
+    29% {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(.2);
+        opacity: 0.8;
+    }
+
+    80% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+#loader > .wolkjebutton.cirkel1 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: -14px;
+    left: calc(50% - 8px);
+}
+
+#loader > .wolkjebutton.cirkel2 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: -8px;
+    left: calc(50% + 1px);
+}
+
+#loader > .wolkjebutton.cirkel3 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: 2px;
+    left: calc(50% - 1px);
+}
+
+#loader > .wolkjebutton.cirkel4 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: 2px;
+    left: calc(50% - 15px);
+}
+
+#loader > .wolkjebutton.cirkel5 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #BABAAE;
+    top: -8px;
+    left: calc(50% - 18px);
+}
